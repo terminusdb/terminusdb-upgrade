@@ -33,10 +33,10 @@ fi
 # Test something
 if [ $? -eq 0 ]
 then
-    echo "Successful conversion of store"
     mv "$SOURCE" "$SOURCE_BACKUP"
     mv "$TARGET" "$SOURCE"
     rm -rf "$WORK"
+    echo "Successful conversion of store"
 else
     echo "Failed to convert store!";
 fi
