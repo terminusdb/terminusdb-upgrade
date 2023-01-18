@@ -1,10 +1,9 @@
 # syntax=docker/dockerfile:1.3
 
 FROM rust:latest AS base
+RUN set -eux; \
+   git clone https://github.com/terminusdb/terminusdb-10-to-11 /app/terminusdb-10-to-11
 WORKDIR /app/terminusdb-10-to-11
-COPY src src
-COPY Cargo.toml Cargo.toml
-COPY Cargo.lock Cargo.lock
 RUN cargo build --release
 
 FROM debian:bullseye
