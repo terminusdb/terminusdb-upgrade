@@ -2,7 +2,7 @@
 
 FROM rust:latest AS base
 RUN set -eux; \
-   git clone -c advice.detachedHead=false -b v1.0.1 https://github.com/terminusdb/terminusdb-10-to-11 /app/terminusdb-10-to-11
+   git clone -c advice.detachedHead=false -b v1.0.2 https://github.com/terminusdb/terminusdb-10-to-11 /app/terminusdb-10-to-11
 WORKDIR /app/terminusdb-10-to-11
 RUN cargo build --release
 
